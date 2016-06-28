@@ -192,5 +192,10 @@ namespace BulkRenamer
                 System.IO.File.WriteAllText(fileToSave, sb.ToString());
             }
         }
+
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
