@@ -166,6 +166,8 @@ namespace BulkRenamer
                     }
                 }
             }
+
+            RefreshSearch();
         }
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
