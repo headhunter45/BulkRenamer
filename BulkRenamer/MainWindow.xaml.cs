@@ -69,7 +69,7 @@ namespace BulkRenamer
 
         private void ckSelectAllRows_Checked(object sender, RoutedEventArgs e)
         {
-            foreach(var result in SearchResults)
+            foreach (var result in SearchResults)
             {
                 result.IsSelected = true;
             }
@@ -100,7 +100,8 @@ namespace BulkRenamer
                 && !String.IsNullOrWhiteSpace(pattern)
                 && !String.IsNullOrWhiteSpace(replacement))
             {
-                try {
+                try
+                {
                     var regex = new Regex(pattern, RegexOptions.Compiled);
                     SearchFolder(folder, regex, replacement, false);
                     dgSearchResults.ItemsSource = SearchResults;
@@ -116,7 +117,8 @@ namespace BulkRenamer
         {
             DirectoryInfo dirInfo = new DirectoryInfo(folderPath);
 
-            try {
+            try
+            {
                 foreach (FileInfo fileInfo in dirInfo.EnumerateFiles())
                 {
                     String before = fileInfo.Name;
@@ -143,10 +145,10 @@ namespace BulkRenamer
 
         private void btnGo_Click(object sender, RoutedEventArgs e)
         {
-                String before;
-                String after;
-                foreach (var result in SearchResults)
-                {
+            String before;
+            String after;
+            foreach (var result in SearchResults)
+            {
                 try
                 {
                     if (result.IsSelected)
@@ -181,7 +183,7 @@ namespace BulkRenamer
                 String fileToSave = saveDialog.FileName;
                 StringBuilder sb = new StringBuilder();
 
-                foreach(var result in SearchResults)
+                foreach (var result in SearchResults)
                 {
                     if (result.IsSelected)
                     {
